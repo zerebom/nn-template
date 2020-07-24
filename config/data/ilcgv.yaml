@@ -1,0 +1,5 @@
+data:
+    folder_path: /home/higuchi/Desktop/tsukuba_data/
+    num_workers: 0
+    batch_size: 12
+    gpus: 1

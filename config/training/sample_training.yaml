@@ -1,0 +1,6 @@
+training:
+  lr: 0.0005
+  metric: main_score
+  mode: "max"
+  seed: 666
+  debug: False

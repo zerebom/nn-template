@@ -1,0 +1,4 @@
+dir:
+    root: /home/higuchi/Desktop/MultiPhase_UNet
+    data: /home/higuchi/Desktop/tsukuba_data
+    device_ids: [0]

@@ -1,0 +1,8 @@
+version: 2
+exp_name: t2_phase
+hydra:
+ run:
+  dir: ./outputs/${exp_name}/${version}
+defaults:
+ - exp: t2_phase
+ - dir: black_tsukuba

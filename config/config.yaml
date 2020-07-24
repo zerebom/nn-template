@@ -1,0 +1,28 @@
+defaults:
+    - dataset: wheat
+    - trainer: default_trainer
+    - training: default_training
+    - logging: tensorboard
+    - optimizer: adamw
+    - scheduler: plateau
+    - model: unet
+    - callbacks: default_callbacks
+    - data: ilcgv
+    - patch: tsukuba_96_1p
+    - loss: bce
+    - augmentation: basic_augs
+  
+general:
+    save_dir: outputs/
+    workspace: MultiPhase_UNet
+    project_name: MultiPhase_UNet
+    device: cuda
+  
+version: 0
+exp_name: 1phase
+hydra:
+    run:
+     dir: ./outputs/${exp_name}_${hydra.job.override_dirname}
+     sweep:
+       dir: outputs/
+       subdir: ${now:%Y_%m_%d_%H_%M_%S}

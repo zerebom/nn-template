@@ -1,0 +1,5 @@
+model:
+    class: networks.unet.UNet3D
+    params:
+      input_channel: ${patch.input_channel}
+      n_classes: 4      

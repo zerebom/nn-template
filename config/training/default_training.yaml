@@ -1,0 +1,6 @@
+training:
+  lr: 0.003
+  metric: c_dice
+  mode: "max"
+  seed: 666
+  debug: False

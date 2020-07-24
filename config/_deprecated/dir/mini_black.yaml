@@ -1,0 +1,4 @@
+dir:
+    root: /home/higuchi/Desktop/PLSegmentation
+    data: /home/higuchi/kits19/data
+    device_ids: [0]

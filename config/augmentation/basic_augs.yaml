@@ -1,0 +1,7 @@
+augmentation:
+    train:
+      RandomFlip: {}
+      RandomRotate:
+        angle_spectrum: 30
+        axes: [[2,1]]
+    val: {}

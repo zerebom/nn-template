@@ -1,0 +1,37 @@
+exp:
+    image: ['imaging.nii.gz']
+    segmentation: ['segmentation.nii.gz']
+    cid_prefix: 'case_'
+    patch_dir: kits_96x96x8
+    fold: [[19, 72, 106, 62, 27, 23, 198, 75, 40, 63, 167, 32, 193, 173, 6, 71, 128, 10, 94, 125, 91, 97],[50, 121, 100, 203, 14, 82, 76, 124, 103, 22, 77, 54, 85, 65, 174, 64, 96, 127, 83, 18, 4, 190],[37, 137, 191, 156, 101, 164, 158, 132, 17, 129, 155, 1, 0, 39, 136, 115, 43, 150, 175, 52, 15],[120, 123, 201, 20, 188, 141, 81, 31, 140, 182, 33, 49, 152, 93, 9, 3, 146, 205, 153, 7, 138]]
+    overlap: [1,1,4]
+    size: [96,96,8]
+    gpus: 2
+    epoch: 500
+    lr: 0.003
+    batch_size: 8
+    pred_batch_size: 8
+    nlabels: 3
+    fold_strategy: kfold
+    input_channel: 
+    step_size: 200
+    ckpt_callback: 
+      class: src.utils.Last20ModelCheckpoint
+    loss: 
+      class: src.loss.BCEDiceLoss
+      params:
+        alpha: 0.5
+        beta: 0.5
+    net:
+      class: model.unet.UNet3D
+      params:
+        input_channel: 1
+        n_classes: 3      
+    augment:
+      train:
+        RandomFlip: {}
+        RandomRotate:
+          angle_spectrum: 30
+          axes: [[2,1]]
+      val: {}
+    

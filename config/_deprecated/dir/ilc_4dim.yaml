@@ -1,0 +1,3 @@
+dir:
+    root: /home/kakeya/Desktop/PLSegmentation
+    data: /home/kakeya/ssd/tsukuba_data
